@@ -1,10 +1,10 @@
 
 <#
 .Synopsis
-  This script is used to build, deploy, and configure BoomBox
+  This script is used to build, deploy, and configure Sabbierra
 
 .DESCRIPTION
-  This script will check that prerequisite software is installed before executing the BoomBox deployment.
+  This script will check that prerequisite software is installed before executing the Sabbierra deployment.
 
   * Packer and Vagrant
   * Virtualbox
@@ -23,12 +23,12 @@
 .EXAMPLE
   build.ps1 -ProviderName virtualbox
 
-  This builds BoomBox using virtualbox and the default path for Packer (C:\Hashicorp\packer.exe)
+  This builds Sabbierra using virtualbox and the default path for Packer (C:\Hashicorp\packer.exe)
 
 .EXAMPLE
   build.ps1 -ProviderName virtualbox -PackerPath 'C:\packer.exe'
 
-  This builds BoomBox using virtuaLbox and a custom path for Packer.
+  This builds Sabbierra using virtuaLbox and a custom path for Packer.
 #>
 
 [cmdletbinding()]
@@ -159,11 +159,11 @@ function prereq_checks {
   }
 
   if ($drivesList.Count -gt 0) {
-    Write-Output "The following drives have less than 20GB of free space and should not be used for deploying BoomBox"
+    Write-Output "The following drives have less than 20GB of free space and should not be used for deploying Sabbierra"
     forEach ($drive in $drivesList) {
       Write-Output "[*] $($drive.Name)"
     }
-    Write-Output "You can ignore this warning if you are deploying BoomBox on another drive."
+    Write-Output "You can ignore this warning if you are deploying Sabbierra on another drive."
   }
 
   # Ensure that vagrant-reload is installed

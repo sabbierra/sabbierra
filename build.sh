@@ -1,6 +1,6 @@
 #! /bin/bash
 
-# Run this script on a fresh clone of BoomBox. It will fail to run if boxes
+# Run this script on a fresh clone of Sabbierra. It will fail to run if boxes
 # have already been created or any of the steps from the README have already
 # been executed. Only MacOS and Linux are supported. Use build.ps1 for Windows.
 
@@ -109,7 +109,7 @@ check_vagrant_instances_exist() {
   # Vagrant status has the potential to return a non-zero error code, so we work around it with "|| true"
   VAGRANT_BUILT=$(vagrant status | grep -c 'not created') || true
   if [ "$VAGRANT_BUILT" -ne 2 ]; then
-    (echo >&2 "You appear to have already created at least one Vagrant instance of BoomBox. This script does not support pre-created instances. Please either destroy the existing instances or follow the build steps in the README to continue.")
+    (echo >&2 "You appear to have already created at least one Vagrant instance of Sabbierra. This script does not support pre-created instances. Please either destroy the existing instances or follow the build steps in the README to continue.")
     exit 1
   fi
 }

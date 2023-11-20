@@ -1,10 +1,10 @@
-![BoomBox](./img/BoomBox.png)
-# BoomBox
+![Sabbierra](./img/Sabbierra.png)
+# Sabbierra
 
-[![GitHub Release Date](https://img.shields.io/github/release-date/nbeede/BoomBox)](https://img.shields.io/github/release-date/nbeede/BoomBox)
-[![Latest GitHub release](https://img.shields.io/github/release/nbeede/BoomBox)](https://img.shields.io/github/release/nbeede/BoomBox)
+[![GitHub Release Date](https://img.shields.io/github/release-date/nbeede/Sabbierra)](https://img.shields.io/github/release-date/nbeede/Sabbierra)
+[![Latest GitHub release](https://img.shields.io/github/release/nbeede/Sabbierra)](https://img.shields.io/github/release/nbeede/Sabbierra)
 
-BoomBox is designed for malware analysts and incident responders. It allows for the rapid deployment of a dynamic malware analysis environment using Cuckoo Sandbox and a Windows 10 detonation chamber. Cuckoo is configured to use the physical machinery so that both Cuckoo and the Windows sandbox can be virtual machines on a single host.
+Sabbierra is designed for malware analysts and incident responders. It allows for the rapid deployment of a dynamic malware analysis environment using Cuckoo Sandbox and a Windows 10 detonation chamber. Cuckoo is configured to use the physical machinery so that both Cuckoo and the Windows sandbox can be virtual machines on a single host.
 
 ## Features
 
@@ -24,23 +24,23 @@ BoomBox is designed for malware analysts and incident responders. It allows for 
 
 ## Quickstart
 
-BoomBox includes a single build script for Linux, macOS, and Windows. This script will build and configure the Windows 10 and Cuckoo virtual machines from the ground up using Packer and Vagrant. The entire build process for BoomBox takes around 30-60 minutes.
+Sabbierra includes a single build script for Linux, macOS, and Windows. This script will build and configure the Windows 10 and Cuckoo virtual machines from the ground up using Packer and Vagrant. The entire build process for Sabbierra takes around 30-60 minutes.
 
 ### Linux/macOS
--   `./build.sh virtualbox` - Build BoomBox from scratch.
--   `./build.sh virtualbox --vagrant-only` - Build BoomBox using pre-built Packer boxes hosted on Vagrant Cloud. This option is faster than building BoomBox from scratch.
+-   `./build.sh virtualbox` - Build Sabbierra from scratch.
+-   `./build.sh virtualbox --vagrant-only` - Build Sabbierra using pre-built Packer boxes hosted on Vagrant Cloud. This option is faster than building Sabbierra from scratch.
 -   `./build.sh virtualbox --packer-only` - This will only build the .Box files and will not build the VMs using Vagrant.
 
 ### Windows
--   `./build.ps1 -ProviderName virtualbox` - Build BoomBox from scratch.
--   `./build.ps1 -ProviderName virtualbox -VagrantOnly` - Build BoomBox using pre-built Packer boxes hosted on Vagrant Cloud. This option is faster than building BoomBox from scratch.
+-   `./build.ps1 -ProviderName virtualbox` - Build Sabbierra from scratch.
+-   `./build.ps1 -ProviderName virtualbox -VagrantOnly` - Build Sabbierra using pre-built Packer boxes hosted on Vagrant Cloud. This option is faster than building Sabbierra from scratch.
 -   `/.build.ps1 -ProviderName virtualbox -PackerOnly` - This will only build the .Box files and will not build the VMs using Vagrant.
 
-## Manually Building BoomBox
+## Manually Building Sabbierra
 1.  Build the Windows sandbox using Packer
 
 ```
-$ cd BoomBox/Packer
+$ cd Sabbierra/Packer
 $ packer build --only=virtualbox-iso sandbox.json
 ```
 
@@ -61,12 +61,12 @@ $ packer build --only=virtualbox-iso sandbox.json
 ## Basic Vagrant Usage
 Vagrant commands must be run from the "Vagrant" folder.
 
-*   Bring up all BoomBox hosts: `vagrant up`
+*   Bring up all Sabbierra hosts: `vagrant up`
 *   Bring up a specific host: `vagrant up <hostname>`
 *   Restart a specific host: `vagrant reload <hostname>`
 *   Restart a specific host and re-run the provision process: `vagrant reload <hostname> --provision`
 *   Destroy a specific host `vagrant destroy <hostname>`
-*   Destroy the entire BoomBox environment: `vagrant destroy` (Adding `-f` forces it without a prompt)
+*   Destroy the entire Sabbierra environment: `vagrant destroy` (Adding `-f` forces it without a prompt)
 *   SSH into a host: `vagrant ssh cuckoo`
 *   Check the status of each host: `vagrant status`
 *   Suspend the environment: `vagrant suspend`
